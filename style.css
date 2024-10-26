@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: #bf94f9;
+    padding: 60px 100px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    width: 550px;
+   
+}
+
+.container1 {
+    text-align: center;
+    background-color: #56599d;
+    padding: 100px 100px;
+    margin-right: 140px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    width: 800px;
+}
+/* Style for X */
+.player-x {
+    color:#56599d;
+}
+
+/* Style for O */
+.player-o {
+    color: #fd58b3; 
+}
+
+.computer-score{
+    margin-left: 300px;
+}
+#pe{
+    margin-left: 300px; 
+}
+h1 {
+    font-size: 50px;
+    margin-bottom: 40px;
+    color: #ffffff;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.btn {
+    padding: 20px 40px;
+    font-size: 25px;
+    color: #fff;
+    background-color: #d7107d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn2{
+    padding: 20px 40px;
+    font-size: 25px;
+    width: 302px;
+    color: #fff;
+    background-color: #d7107d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #555;
+}
+.btn2:hover {
+    background-color: #555;
+}
+.container span {
+    color: #d7107d;
+}
+
+#backgroundVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.player-score,.computer-score p {
+  
+    color: #ffffff;
+ font-size:1em;
+
+}
+h2{
+    color: #fdfdfd;
+    font-size: 3em;
+}
+.game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+p{
+    font-size: 60px;
+}
+.num p{
+    font-size: 60px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    color: #fd58b3;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+   margin-left: 0px;
+   margin-top: 20px;
+    border: 2px solid #fffbfb;
+    display: flex;
+    font-size: 6rem;
+    justify-content: center;
+    align-items: center;
+ 
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #999898;
+}
+
+.message {
+    font-size: 2em;
+    margin-bottom: 10px;
+    
+    background-color: #fd58b3;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    width: 300px;
+    display: none; /* Initially hidden */
+}
+
+
+button {
+  
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #fd58b3;
+    border: 2px solid #fd58b3;
+}
+#restartButton{
+    margin-top: 100px;
+    color: #fff;
+    font-size: 4em;
+}
+/* Style pour les cellules gagnantes */
+.winning-cell {
+    position: relative;
+    background-color: rgba(230, 230, 221, 0.6); 
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+/* Animation de l'effet lumineux */
+
+.winning-cell::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #56599d;
+    top: 50%;
+    left: 0;
+    animation: drawLine 1s forwards;
+}
+
+/* Style pour la ligne horizontale */
+.horizontal-line::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    background-color: #56599d;
+    top: 50%;
+    left: 0;
+   
+}
+
+/* Style pour la ligne verticale */
+.vertical-line::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 7px;
+    background-color: #56599d;
+    left: 50%;
+    top: 0;
+   
+}
+
+.diagonal-line1::before,
+.diagonal-line2::before {
+    content: '';
+    position: absolute;
+    width: 130%; 
+    height: 10px; 
+    background-color: #56599d;
+    top: 50%; /* Centré verticalement */
+    left: 50%; /* Centré horizontalement */
+    transform: translate(-50%, -50%) rotate(45deg);
+    transform-origin: center;
+    animation: drawDiagonal 1s forwards;
+}
+
+.diagonal-line2::before {
+    transform: translate(-50%, -50%) rotate(-45deg); 
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Tic Tac Toe </title>
+</head>
+<body>
+    <video id="backgroundVideo" autoplay loop muted>
+        <source src="v.mp4" type="video/mp4">
+    </video>
+   
+        <div class="container1">
+            <div class="scoreboard">
+                <div class="player-score">
+                    <h2>PlayerX</h2>
+                    <p id="playerXScore">0</p>
+                </div>
+                <div class="player-score"id="pe">
+                    <h2>PlayerO</h2>
+                    <p id="playerOScore">0</p>
+                </div>
+            </div>
+
+            <div class="game-board">
+                <div class="message" id="message"></div>
+                <div class="grid" id="grid">
+                    <div class="cell" data-cell-index="0"></div>
+                    <div class="cell" data-cell-index="1"></div>
+                    <div class="cell" data-cell-index="2"></div>
+                    <div class="cell" data-cell-index="3"></div>
+                    <div class="cell" data-cell-index="4"></div>
+                    <div class="cell" data-cell-index="5"></div>
+                    <div class="cell" data-cell-index="6"></div>
+                    <div class="cell" data-cell-index="7"></div>
+                    <div class="cell" data-cell-index="8"></div>
+                </div>
+                <button id="restartButton">Restart</button>
+            </div>
+        </div>
+    </div>
+    <script src="scriptp.js"></script>
+</body>
+</html>
